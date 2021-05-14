@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button></ion-back-button>
+    <ion-title>
+      G00347770
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <h6>> Lab 7 Provinces</h6>
+ <ul>
+  <li [routerLink]="['/ulster']" routerDirection="forward">Ulster</li>
+  <li [routerLink]="['/munster']" routerDirection="forward"> Munster</li>
+  <li [routerLink]="['/connaught']" routerDirection="forward">Connaught</li>
+  <li [routerLink]="['/leinster']" routerDirection="forward">Leinster</li>
+</ul>
+<h6>> Lab 8 Movies</h6>
+  <p [routerLink]="['/movies']" routerDirection="forward"> "War" Movies</p>
+
+ <h6>> Lab 9 Storage</h6>
+
+  <h4>Your Status is: {{myStatus}} </h4>
+
+    <ion-button [routerLink]="['/status']">Update Status</ion-button>
+
+ <h6>> Lab 10 Plugins</h6>
+    <ion-button (click)="Flashlight()">Flashlight</ion-button>
+    <hr>
+    <ion-button (click)="GetGPS()">GPS</ion-button>
+    <br>
+    {{lat}}<br>{{long}}
+    <br>
+    <ion-button (click)="UseCamera()">Camera</ion-button>
+    <br>
+    <h6>> Data Binding</h6>
+    <div class="ion-padding">
+      <form novalidate>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked" color="primary">Username</ion-label>
+            <ion-input [(ngModel)]="login.username" name="username" type="text" required>
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" color="primary">Password</ion-label>
+            <ion-input [(ngModel)]="login.password" name="password" type="password" required>
+            </ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="onLogin()" type="submit" expand="block">Login</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="setLoginData()" expand="block">Set data from typescript</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+
+</ion-content>
